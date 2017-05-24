@@ -25,9 +25,15 @@ class Thing extends Component {
   }
 
   changeChecked = (ev) => {
-    const { thing, checked } = this.props
+    const { thing, saveThing } = this.props
     thing.checked = !thing.checked
-    checked(thing)
+    saveThing(thing)
+  }
+
+  changeDate = (ev) => {
+    const { thing, saveThing } = this.props
+    thing.dueDate = ev.target.value
+    saveThing(thing)
   }
 
   render() {
@@ -48,8 +54,8 @@ class Thing extends Component {
         </div>
         <div className="details">
           <form>
-            Due date:
-            <input type="date"/>
+            Due date: 
+            <input className="date" type="date" name="due date" onChange={this.changeDate} value={thing.dueDate}/>
           </form>
         </div>
       </li>
