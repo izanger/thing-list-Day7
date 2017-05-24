@@ -7,7 +7,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ### Super Mega Bonus Credit
 
-* Add a due date to each thing.
-* Make sure it persists
+* ~~Add a due date to each thing.~~
+* ~~Make sure it persists~~
 
 **Hint**: HTML 5 includes an input type **date**, _i.e._ `&lt;input type="date" /&gt;`
