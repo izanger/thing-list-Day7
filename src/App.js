@@ -25,6 +25,7 @@ class App extends Component {
     return {
       id: `thing-${Date.now()}`,
       name: '',
+      checked: false,
     }
   }
 
@@ -47,11 +48,21 @@ class App extends Component {
     this.setState({ things })
   }
 
+  checked = (thing) => {
+    const things = {...this.state.things}
+    things[thing.id] = thing
+    this.setState({ things })
+  
+  //   things[thing.id].checked = !things[thing.id].checked
+  //   this.setState({ things })
+    }
+
   render() {
     const actions = {
       saveThing: this.saveThing,
       removeThing: this.removeThing,
-    }
+      checked: this.checked,
+  }
 
     return (
       <div className="App">
