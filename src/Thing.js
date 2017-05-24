@@ -46,6 +46,12 @@ class Thing extends Component {
           />
           <Actions thing={thing} removeThing={removeThing} />
         </div>
+        <div className="details">
+          <form>
+            Due date:
+            <input type="date"/>
+          </form>
+        </div>
       </li>
     )
   }
