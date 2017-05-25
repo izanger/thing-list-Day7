@@ -2,9 +2,11 @@ import React from 'react'
 import './SignIn.css'
 import { auth, githubProvider } from './base'
 
-const SignIn = () => {
+const SignIn = ({ authHandler }) => {
     const authenticate = (provider) => {
-        auth.signInWithPopup(provider).then(() => console.log('Signed In!'))
+        auth
+            .signInWithPopup(provider)
+            .then(authHandler)
     }
     
     return (
