@@ -26,7 +26,7 @@ class App extends Component {
 
   setupThings() {
     this.ref = base.syncState(
-      'things',
+      `${this.state.uid}/things`,
       {
         context: this,
         state: 'things'
@@ -37,7 +37,7 @@ class App extends Component {
   authHandler = (authData) => {
     this.setState(
       { uid: authData.user.uid },
-      this.setupThings()
+      this.setupThings
     )
     
   }
@@ -71,7 +71,8 @@ class App extends Component {
   }
 
   signOut = () => {
-    auth.signOut().then(() => this.setState({ uid: null}))
+     this.setState({ uid: null, things: {} })
+     auth.signOut()
   }
 
   renderThings() {
