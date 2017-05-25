@@ -1,6 +1,7 @@
 import Rebase from 're-base'
 import firebase from 'firebase/app'
 import database from 'firebase/database'
+import 'firebase/auth'
 
 const app = firebase.initializeApp({
   apiKey: "AIzaSyAW79zmgUG_daWdPbAEDf6Z5fJ8qD1p4CE",
@@ -12,6 +13,8 @@ const app = firebase.initializeApp({
 })
 
 const db = database(app)
-const base = Rebase.createClass(db)
 
-export default base
+export const auth = app.auth()
+export const githubProvider = new firebase.auth.GithubAuthProvider()
+
+export default Rebase.createClass(db)
