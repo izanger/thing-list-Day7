@@ -4,7 +4,7 @@ import { auth, githubProvider } from './base'
 
 const SignIn = () => {
     const authenticate = (provider) => {
-        auth.signInWithPopup(provider)
+        auth.signInWithPopup(provider).then(() => console.log('Signed In!'))
     }
     
     return (
